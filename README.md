@@ -11,6 +11,8 @@ Una de mis primeras aplicaciones en React: el proyecto donde dejé de leer sobre
 ![CSS Modules](https://img.shields.io/badge/CSS-Modules-1572B6?logo=css3&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-3-8DD6F9?logo=webpack&logoColor=black)
 
+### [🍔 Pruébala en vivo](https://diegomottadev.github.io/delivery-burguer-app/)
+
 ![Burger Builder en acción](https://user-images.githubusercontent.com/64202326/233193956-e2e2b1ca-10f8-4fb3-a038-24cd7e6fd603.png)
 
 </div>
@@ -34,7 +36,8 @@ El objetivo no era copiar código, sino entender **por qué** React funciona com
 - 🥗 **Agregar y quitar ingredientes**: lechuga, bacon, queso y carne, y ver cómo la hamburguesa crece en pantalla.
 - 💲 **Precio en tiempo real**: cada ingrediente tiene su costo y el total se recalcula al instante.
 - 🚫 **Controles inteligentes**: no puedes quitar un ingrediente que no existe y el botón *ORDER NOW* solo se activa cuando hay algo que pedir.
-- 🧾 **Resumen del pedido**: un modal animado muestra el detalle de tu hamburguesa antes de confirmar.
+- 🧾 **Resumen del pedido**: un modal animado muestra el detalle de tu hamburguesa y el precio total antes de confirmar.
+- ✅ **Confirmación del pedido**: al confirmar ves el total pagado y puedes empezar una hamburguesa nueva.
 - 📱 **Diseño responsive**: barra de navegación en escritorio y menú lateral (*side drawer*) en móvil.
 
 ---
@@ -66,7 +69,8 @@ src/
 │   ├── Burger/
 │   │   ├── BurgerIngredient/ # Cada capa de la hamburguesa (CSS puro)
 │   │   ├── BuildControls/    # Botones Más / Menos por ingrediente
-│   │   └── OrderSummary/     # Resumen que se muestra en el modal
+│   │   ├── OrderSummary/     # Resumen que se muestra en el modal
+│   │   └── OrderConfirmation/ # Pantalla de pedido confirmado
 │   ├── Navigation/           # Toolbar, SideDrawer y NavigationItems
 │   ├── Logo/
 │   └── UI/                   # Modal, Backdrop, Button (reutilizables)
@@ -101,6 +105,7 @@ Abre **http://localhost:3000** en tu navegador y empieza a armar tu hamburguesa.
 | `npm start` | Servidor de desarrollo con recarga automática |
 | `npm run build` | Build optimizado para producción en `/build` |
 | `npm test` | Ejecuta los tests con Jest |
+| `npm run deploy` | Genera el build y lo publica en GitHub Pages (rama `gh-pages`) |
 
 ---
 
