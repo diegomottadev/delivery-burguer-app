@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🍔 Burger Builder
+# Burger Builder
 
 **Build your burger layer by layer, watch the price update in real time, and place your order.**
 
@@ -11,7 +11,7 @@ One of my first React applications: the project where I stopped reading about co
 ![CSS Modules](https://img.shields.io/badge/CSS-Modules-1572B6?logo=css3&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-3-8DD6F9?logo=webpack&logoColor=black)
 
-### [🍔 Try it live](https://diegomottadev.github.io/delivery-burguer-app/)
+### [Try it live](https://diegomottadev.github.io/delivery-burguer-app/)
 
 ![Burger Builder on desktop and mobile](docs/screenshot.jpg)
 
@@ -19,7 +19,7 @@ One of my first React applications: the project where I stopped reading about co
 
 ---
 
-## 📖 The story behind the project
+## The story behind the project
 
 This project marks my **first serious steps with React**. To learn it in depth, not just skim the surface, I followed
 [**React - The Complete Guide (incl. Hooks, React Router, Redux)**](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
@@ -27,22 +27,22 @@ by **Maximilian Schwarzmüller**, one of the most comprehensive React courses ou
 
 The goal wasn't to copy code, but to understand **why** React works the way it does: how state flows, when a component re-renders, how to split a UI into reusable pieces, and how those pieces talk to each other. Burger Builder was the practice ground where all of that became concrete.
 
-> 💡 Later on I upgraded the project to run on **React 16**, which taught me how a codebase evolves alongside its ecosystem.
+> Later on I upgraded the project to run on **React 16**, which taught me how a codebase evolves alongside its ecosystem.
 
 ---
 
-## ✨ What you can do
+## What you can do
 
-- 🥗 **Add and remove ingredients**: salad, bacon, cheese and meat, and watch the burger grow on screen.
-- 💲 **Real-time pricing**: each ingredient has its own cost and the total is recalculated instantly.
-- 🚫 **Smart controls**: you can't remove an ingredient that isn't there, and the *ORDER NOW* button only activates when there's something to order.
-- 🧾 **Order summary**: an animated modal shows your burger's details and total price before you confirm.
-- ✅ **Order confirmation**: after confirming you see the total paid and can start a new burger.
-- 📱 **Responsive design**: a navigation bar on desktop and a side drawer menu on mobile.
+- **Add and remove ingredients**: salad, bacon, cheese and meat, and watch the burger grow on screen.
+- **Real-time pricing**: each ingredient has its own cost and the total is recalculated instantly.
+- **Smart controls**: you can't remove an ingredient that isn't there, and the *ORDER NOW* button only activates when there's something to order.
+- **Order summary**: an animated modal shows your burger's details and total price before you confirm.
+- **Order confirmation**: after confirming you see the total paid and can start a new burger.
+- **Responsive design**: a navigation bar on desktop and a side drawer menu on mobile.
 
 ---
 
-## 🧠 What I learned building it
+## What I learned building it
 
 | Concept | Where it shows up in the code |
 |---|---|
@@ -59,7 +59,7 @@ The goal wasn't to copy code, but to understand **why** React works the way it d
 
 ---
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 src/
@@ -82,7 +82,7 @@ src/
 
 ---
 
-## 🚀 Getting started
+## Getting started
 
 **Requirements:** [Node.js](https://nodejs.org) installed.
 
@@ -98,7 +98,7 @@ npm install
 npm start
 ```
 
-Open **http://localhost:3000** in your browser and start building your burger. 🍔
+Open **http://localhost:3000** in your browser and start building your burger.
 
 | Command | Description |
 |---|---|
@@ -109,7 +109,7 @@ Open **http://localhost:3000** in your browser and start building your burger. �
 
 ---
 
-## 🛣️ Next steps
+## Next steps
 
 The course goes far beyond this stage, and this project has room to grow with it:
 
@@ -121,7 +121,7 @@ The course goes far beyond this stage, and this project has room to grow with it
 
 ---
 
-## 🙌 Credits
+## Credits
 
 - Course: [React - The Complete Guide (incl. Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) by **Maximilian Schwarzmüller** (Academind).
 - Built by **[Diego Motta](https://github.com/diegomottadev)** as part of my journey learning React.
