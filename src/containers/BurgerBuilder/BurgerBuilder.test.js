@@ -11,6 +11,11 @@ const buttons = (text) =>
 const steppers = (kind) =>
     Array.from(container.querySelectorAll('button[aria-label^="' + kind + ' "]'));
 const click = (button) => act(() => { Simulate.click(button); });
+const dialog = () => container.querySelector('[role="dialog"]');
+const isOpen = () => dialog().getAttribute('aria-hidden') === 'false';
+const pressEscape = () => act(() => {
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+});
 
 beforeEach(() => {
     container = document.createElement('div');
@@ -40,7 +45,8 @@ it('adds and removes ingredients, updating the price', () => {
 it('confirms an order and resets for a new one', () => {
     click(steppers('More')[0]);
     click(buttons('ORDER NOW')[0]);
-    expect(container.textContent).toContain('Total price: $4.50');
+    expect(isOpen()).toBe(true);
+    expect(dialog().textContent).toContain('Total$4.50');
 
     click(buttons('CONTINUE')[0]);
     expect(container.textContent).toContain('Order confirmed!');
@@ -49,4 +55,25 @@ it('confirms an order and resets for a new one', () => {
     click(buttons('BUILD ANOTHER BURGER')[0]);
     expect(container.textContent).not.toContain('Order confirmed!');
     expect(container.textContent).toContain('Current price: $4.00');
+});
+
+it('lists only the ingredients on the burger, with subtotals', () => {
+    click(steppers('More')[3]);
+    click(steppers('More')[3]);
+    click(buttons('ORDER NOW')[0]);
+
+    const lines = Array.from(dialog().querySelectorAll('li')).map(li => li.textContent);
+    expect(lines).toEqual(['Burger base$4.00', 'meat × 2$2.60']);
+    expect(dialog().textContent).toContain('Total$6.60');
+});
+
+it('closes the order summary with Escape', () => {
+    click(steppers('More')[0]);
+    click(buttons('ORDER NOW')[0]);
+    expect(isOpen()).toBe(true);
+
+    pressEscape();
+    expect(isOpen()).toBe(false);
+    // Cancelling keeps the burger as it was
+    expect(container.textContent).toContain('Current price: $4.50');
 });

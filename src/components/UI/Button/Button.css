@@ -1,14 +1,20 @@
 .Button {
     background-color: transparent;
     border: 2px solid transparent;
-    border-radius: 10px;
+    border-radius: 12px;
     outline: none;
     cursor: pointer;
     font: inherit;
     font-weight: 800;
-    padding: 10px 18px;
-    margin: 12px 10px 0 0;
+    letter-spacing: 0.03em;
+    padding: 12px 18px;
+    margin: 0;
     transition: background-color 0.2s, color 0.2s;
+}
+
+.Button:focus-visible {
+    outline: 3px solid #F4D004;
+    outline-offset: 2px;
 }
 
 .Success {
@@ -22,10 +28,10 @@
 
 .Danger {
     color: #944317;
-    border-color: #944317;
+    border-color: #E3C3AE;
 }
 
 .Danger:hover {
-    background-color: #944317;
-    color: white;
+    background-color: #FBEDE4;
+    border-color: #944317;
 }

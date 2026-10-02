@@ -5,8 +5,13 @@ import Backdrop from '../Backdrop/Backdrop';
 const modal = (props) =>(
     <Auxiliar>
         <Backdrop show={props.show} clicked={props.modalClosed}></Backdrop>
-   
-        <div  className={classes.Modal} style={{ transform: props.show? 'translateY(0)': 'translateY(-100vh)', opacity: props.show ? '1':'0' }}>
+
+        <div
+            className={[classes.Modal, props.show ? classes.Open : null].join(' ')}
+            role="dialog"
+            aria-modal="true"
+            aria-hidden={!props.show}>
+            <button className={classes.CloseButton} onClick={props.modalClosed} aria-label="Close">×</button>
             {props.children}
         </div>
     </Auxiliar>

@@ -6,6 +6,7 @@ import Modal  from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import OrderConfirmation from "../../components/Burger/OrderConfirmation/OrderConfirmation";
 import classes from "./BurgerBuilder.css";
+const BASE_PRICE = 4;
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -19,7 +20,7 @@ const INITIAL_STATE = {
         cheese:0,
         meat:0
     },
-    totalPrice: 4,
+    totalPrice: BASE_PRICE,
     purchasable:false,
     purchasing:  false,
     ordered: false
@@ -30,6 +31,29 @@ class BurgerBuilder extends Component{
     //     this.state = {}
     // }
     state = INITIAL_STATE
+
+    componentDidMount(){
+        document.addEventListener('keydown', this.keyDownHandler);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener('keydown', this.keyDownHandler);
+    }
+
+    // Escape closes the modal, like clicking the backdrop
+    keyDownHandler = (event) =>{
+        if (event.key === 'Escape' && this.state.purchasing){
+            this.modalClosedHandler();
+        }
+    }
+
+    modalClosedHandler = () =>{
+        if (this.state.ordered){
+            this.newOrderHandler();
+        } else {
+            this.purchaseCancelHandler();
+        }
+    }
 
     updatePurchaseState(ingredients){
          const sum =  Object.keys(ingredients)
@@ -100,13 +124,15 @@ class BurgerBuilder extends Component{
         return (
                 <Auxiliar>
                     <Modal show={this.state.purchasing}
-                     modalClosed={this.state.ordered ? this.newOrderHandler : this.purchaseCancelHandler}>
+                     modalClosed={this.modalClosedHandler}>
                         {this.state.ordered
                             ? <OrderConfirmation
                                price={this.state.totalPrice}
                                newOrder={this.newOrderHandler}
                                />
                             : <OrderSummary ingredients={this.state.ingredients}
+                               ingredientPrices={INGREDIENT_PRICES}
+                               basePrice={BASE_PRICE}
                                price={this.state.totalPrice}
                                purchaseCancelled={this.purchaseCancelHandler}
                                purchaseContinued={this.purchaseContinueHandler}

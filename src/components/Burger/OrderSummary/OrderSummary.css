@@ -1,0 +1,56 @@
+.Title {
+    margin: 0 0 4px;
+    font-size: 1.4rem;
+    color: #3B2A1A;
+}
+
+.Subtitle {
+    margin: 0 0 16px;
+    color: #8F5C2C;
+}
+
+.Lines {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Lines li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #EAD7BE;
+}
+
+.Name {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.Count {
+    font-weight: 400;
+    color: #8F5C2C;
+}
+
+.Total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0 20px;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.Total strong {
+    font-size: 1.5rem;
+    color: #703B09;
+}
+
+.Actions {
+    display: flex;
+    gap: 12px;
+}
+
+.Actions > button {
+    flex: 1;
+}
