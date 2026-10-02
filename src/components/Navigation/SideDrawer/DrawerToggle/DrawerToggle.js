@@ -4,11 +4,11 @@ import classes from './DrawerToggle.css';
 
 
 const drawerToggle = (props) => (
-    <div className={classes.DrawerToggle} onClick={props.clicked}>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <button className={classes.DrawerToggle} onClick={props.clicked} aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 );
 
 export default drawerToggle;

@@ -15,12 +15,17 @@ const sideDrawer = ( props ) => {
         <Auxiliar>
             <Backdrop show={props.open} clicked={props.closed}/>
             <div className={attachedClasses.join(' ')}>
-                <div className={classes.Logo}>
-                    <Logo />
+                <div className={classes.Header}>
+                    <div className={classes.Logo}>
+                        <Logo />
+                    </div>
+                    <span className={classes.BrandName}>Burger Builder</span>
+                    <button className={classes.CloseButton} onClick={props.closed} aria-label="Close menu">×</button>
                 </div>
                 <nav>
                     <NavigationItems />
                 </nav>
+                <p className={classes.Footer}>Built with React</p>
             </div>
         </Auxiliar>
     );

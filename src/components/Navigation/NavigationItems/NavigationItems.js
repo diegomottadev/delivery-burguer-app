@@ -5,7 +5,8 @@ import NavigationItem from './NavigationItem/NavigationItem';
 
 const navigationItems = () => (
     <ul className={classes.NavigationItems}>
-        <NavigationItem link={process.env.PUBLIC_URL + '/'} active>Burger Builder</NavigationItem>
+        <NavigationItem link={process.env.PUBLIC_URL + '/'} active>Builder</NavigationItem>
+        <NavigationItem link="https://github.com/diegomottadev/delivery-burguer-app" external>GitHub</NavigationItem>
     </ul>
 );
 

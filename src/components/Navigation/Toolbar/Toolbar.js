@@ -9,9 +9,12 @@ import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 const toolbar = ( props ) => (
     <header className={classes.Toolbar}>
         <DrawerToggle clicked={props.drawerToggleClicked} />
-        <div className={classes.Logo}>
-            <Logo />
-        </div>
+        <a className={classes.Brand} href={process.env.PUBLIC_URL + '/'}>
+            <div className={classes.Logo}>
+                <Logo />
+            </div>
+            <span>Burger Builder</span>
+        </a>
         <nav className={classes.DesktopOnly}>
             <NavigationItems />
         </nav>
