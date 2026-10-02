@@ -5,6 +5,7 @@ import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal  from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import OrderConfirmation from "../../components/Burger/OrderConfirmation/OrderConfirmation";
+import classes from "./BurgerBuilder.css";
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.4,
@@ -111,16 +112,19 @@ class BurgerBuilder extends Component{
                                purchaseContinued={this.purchaseContinueHandler}
                                />}
                     </Modal>
+                    <div className={classes.Builder}>
                     <Burger  ingredients={this.state.ingredients}></Burger>
                      <BuildControls
                      ingredientRemoved={this.removeIngredientHandler} 
                      ingredientAdded={this.addIngredientHandler}
+                     ingredients={this.state.ingredients}
                      disabled= {disabledInfo}
                      price={this.state.totalPrice}
                      ingredientPrices={INGREDIENT_PRICES}
                      purchasable={this.state.purchasable}
                      ordered={this.purchaseHandler}
                      />
+                    </div>
                   
                 </Auxiliar>
         );

@@ -1,30 +1,30 @@
-.Burger{
-    width: 100%;
-    margin: auto;
-    height: 250px;
-    overflow: scroll;
+/* Fixed 7:6 shape so the burger never stretches; sized to fit both
+   the screen width and height. */
+.Burger {
+    width: min(92vw, 58vh, 460px);
+    aspect-ratio: 7 / 6;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     text-align: center;
- font-weight: bold;
- font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #8F5C2C;
+    /* Center the burger vertically in its box; "safe" keeps the top
+       reachable by scrolling once many ingredients overflow it. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: safe center;
 }
 
-@media (min-width: 500px) and (min-heigth:400px){
-    .Burger{
-        width: 350px;
-        height: 300px;
-    }
+.Burger > * {
+    flex-shrink: 0;
 }
 
-@media (min-width: 500px) and (min-heigth:401px){
-    .Burger{
-        width: 450px;
-        height: 400px;
-    }
-}
-
-@media (min-width: 1000px) and (min-heigth:700px){
-    .Burger{
-        width: 700px;
-        height: 600px;
+@media (min-width: 900px), (min-width: 600px) and (orientation: landscape) {
+    .Burger {
+        width: min(46vw, calc(116vh - 140px), 600px);
+        margin: 0;
     }
 }

@@ -2,19 +2,34 @@
     position: fixed;
     z-index: 500;
     background-color: white;
-    width: 70%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
-    left: 15%;
-    top: 30%;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    padding: 24px;
+    left: 5%;
+    top: 15%;
+    max-height: 80vh;
+    overflow-y: auto;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
 }
 
+.Modal h3 {
+    margin-top: 0;
+}
+
 @media (min-width: 600px) {
     .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
+        width: 460px;
+        left: calc(50% - 230px);
+    }
+}
+
+/* Short screens (phone in landscape): use the full height so the buttons stay reachable */
+@media (max-height: 500px) {
+    .Modal {
+        top: 16px;
+        max-height: calc(100vh - 32px);
+        padding: 16px 24px;
     }
 }

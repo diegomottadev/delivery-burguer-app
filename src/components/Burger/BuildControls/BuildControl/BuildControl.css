@@ -2,61 +2,83 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
-}
-
-.BuildControl button {
-    display: block;
-    font: inherit;
-    padding: 5px;
-    margin: 0 5px;
-    width: 80px;
-    border: 1px solid #AA6817;
-    cursor: pointer;
-    outline: none;
-}
-
-.BuildControl button:disabled {
-    background-color: #AC9980;
-    border: 1px solid #7E7365;
-    color: #ccc;
-    cursor: default;
-}
-
-.BuildControl button:hover:disabled {
-    background-color: #AC9980;
-    color: #ccc;
-    cursor: not-allowed;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .Label {
-    padding: 10px;
-    font-weight: bold;
-    width: 80px;
-}
-
-.BuildControl .Less {  
-    background-color: #D39952;
+    flex: 1;
+    font-weight: 800;
     color: white;
 }
 
-.BuildControl .More {
-    background-color: #8F5E1E;
-    color: white;
-}
-
-.BuildControl .Less:hover, .BuildControl .Less:active {  
-    background-color: #DAA972;
-    color: white;
-}
-
-.BuildControl .More:hover,.BuildControl .More:active {
-    background-color: #99703F;
-    color: white;
-}
 .Price {
     display: block;
-    font-weight: normal;
-    font-size: 0.8em;
-    color: #703B09;
+    font-weight: 400;
+    font-size: 0.85em;
+    color: #FFE9C7;
+}
+
+.Stepper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Count {
+    min-width: 1.5em;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* 44px buttons: comfortable touch targets on mobile */
+.Stepper button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.Stepper .Less {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #8F5E1E;
+}
+
+.Stepper .More {
+    background-color: #703B09;
+    color: white;
+}
+
+.Stepper .Less:hover:not(:disabled) {
+    background-color: white;
+}
+
+.Stepper .More:hover {
+    background-color: #8F5C2C;
+}
+
+.Stepper button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Short screens (phone in landscape): more compact rows */
+@media (max-height: 500px) {
+    .BuildControl {
+        padding: 4px 0;
+    }
+
+    .Stepper button {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
 }

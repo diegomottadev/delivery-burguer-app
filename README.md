@@ -2,132 +2,132 @@
 
 # 🍔 Burger Builder
 
-**Arma tu hamburguesa capa por capa, mira el precio en tiempo real y haz tu pedido.**
+**Build your burger layer by layer, watch the price update in real time, and place your order.**
 
-Una de mis primeras aplicaciones en React: el proyecto donde dejé de leer sobre componentes y empecé a construirlos.
+One of my first React applications: the project where I stopped reading about components and started building them.
 
 ![React](https://img.shields.io/badge/React-16.13-61DAFB?logo=react&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
 ![CSS Modules](https://img.shields.io/badge/CSS-Modules-1572B6?logo=css3&logoColor=white)
 ![Webpack](https://img.shields.io/badge/Webpack-3-8DD6F9?logo=webpack&logoColor=black)
 
-### [🍔 Pruébala en vivo](https://diegomottadev.github.io/delivery-burguer-app/)
+### [🍔 Try it live](https://diegomottadev.github.io/delivery-burguer-app/)
 
-![Burger Builder en acción](https://user-images.githubusercontent.com/64202326/233193956-e2e2b1ca-10f8-4fb3-a038-24cd7e6fd603.png)
+![Burger Builder in action](https://user-images.githubusercontent.com/64202326/233193956-e2e2b1ca-10f8-4fb3-a038-24cd7e6fd603.png)
 
 </div>
 
 ---
 
-## 📖 La historia detrás del proyecto
+## 📖 The story behind the project
 
-Este proyecto marca mis **primeros pasos serios en React**. Para aprenderlo a fondo, y no solo por encima, seguí el curso
+This project marks my **first serious steps with React**. To learn it in depth, not just skim the surface, I followed
 [**React - The Complete Guide (incl. Hooks, React Router, Redux)**](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
-de **Maximilian Schwarzmüller**, uno de los cursos de React más completos que existen.
+by **Maximilian Schwarzmüller**, one of the most comprehensive React courses out there.
 
-El objetivo no era copiar código, sino entender **por qué** React funciona como funciona: cómo fluye el estado, cuándo se vuelve a renderizar un componente, cómo se divide una interfaz en piezas reutilizables y cómo se comunican entre sí. Burger Builder fue el campo de práctica donde todo eso se volvió concreto.
+The goal wasn't to copy code, but to understand **why** React works the way it does: how state flows, when a component re-renders, how to split a UI into reusable pieces, and how those pieces talk to each other. Burger Builder was the practice ground where all of that became concrete.
 
-> 💡 Más adelante actualicé el proyecto para que funcione con **React 16**, lo que me sirvió para entender cómo evoluciona un código base con el ecosistema.
-
----
-
-## ✨ Qué puedes hacer
-
-- 🥗 **Agregar y quitar ingredientes**: lechuga, bacon, queso y carne, y ver cómo la hamburguesa crece en pantalla.
-- 💲 **Precio en tiempo real**: cada ingrediente tiene su costo y el total se recalcula al instante.
-- 🚫 **Controles inteligentes**: no puedes quitar un ingrediente que no existe y el botón *ORDER NOW* solo se activa cuando hay algo que pedir.
-- 🧾 **Resumen del pedido**: un modal animado muestra el detalle de tu hamburguesa y el precio total antes de confirmar.
-- ✅ **Confirmación del pedido**: al confirmar ves el total pagado y puedes empezar una hamburguesa nueva.
-- 📱 **Diseño responsive**: barra de navegación en escritorio y menú lateral (*side drawer*) en móvil.
+> 💡 Later on I upgraded the project to run on **React 16**, which taught me how a codebase evolves alongside its ecosystem.
 
 ---
 
-## 🧠 Lo que aprendí construyéndolo
+## ✨ What you can do
 
-| Concepto | Dónde se ve en el código |
+- 🥗 **Add and remove ingredients**: salad, bacon, cheese and meat, and watch the burger grow on screen.
+- 💲 **Real-time pricing**: each ingredient has its own cost and the total is recalculated instantly.
+- 🚫 **Smart controls**: you can't remove an ingredient that isn't there, and the *ORDER NOW* button only activates when there's something to order.
+- 🧾 **Order summary**: an animated modal shows your burger's details and total price before you confirm.
+- ✅ **Order confirmation**: after confirming you see the total paid and can start a new burger.
+- 📱 **Responsive design**: a navigation bar on desktop and a side drawer menu on mobile.
+
+---
+
+## 🧠 What I learned building it
+
+| Concept | Where it shows up in the code |
 |---|---|
-| **Componentes con estado vs. presentacionales** | `BurgerBuilder` maneja la lógica; `Burger`, `BuildControls` y `OrderSummary` solo reciben *props* |
-| **Estado inmutable** | Los *handlers* copian el estado con *spread* (`{...this.state.ingredients}`) antes de actualizarlo |
-| **`setState` basado en el estado previo** | `Layout` alterna el *side drawer* con `setState(prevState => ...)` |
-| **Renderizado dinámico de listas** | `Burger` transforma `{ meat: 2, cheese: 1 }` en una pila de componentes con `map` + `reduce` |
-| **Comunicación hijo → padre** | Los controles reciben funciones por *props* (`ingredientAdded`, `ordered`, ...) |
-| **Higher Order Components** | `Auxiliar` como *wrapper* sin DOM extra, y `Layout` como estructura común |
-| **Componentes UI reutilizables** | `Modal`, `Backdrop` y `Button` con variantes (`Success` / `Danger`) |
-| **CSS Modules** | Estilos con alcance local por componente, sin colisiones de clases |
-| **Validación de props** | `PropTypes` en `BurgerIngredient` |
-| **Hamburguesa 100% CSS** | Pan, semillas, carne y queso están dibujados solo con CSS, sin imágenes |
+| **Stateful vs. presentational components** | `BurgerBuilder` handles the logic; `Burger`, `BuildControls` and `OrderSummary` only receive *props* |
+| **Immutable state** | Handlers copy state with the *spread* operator (`{...this.state.ingredients}`) before updating it |
+| **`setState` based on previous state** | `Layout` toggles the side drawer with `setState(prevState => ...)` |
+| **Dynamic list rendering** | `Burger` turns `{ meat: 2, cheese: 1 }` into a stack of components using `map` + `reduce` |
+| **Child → parent communication** | Controls receive functions via *props* (`ingredientAdded`, `ordered`, ...) |
+| **Higher Order Components** | `Auxiliar` as a wrapper with no extra DOM node, and `Layout` as the shared structure |
+| **Reusable UI components** | `Modal`, `Backdrop` and `Button` with variants (`Success` / `Danger`) |
+| **CSS Modules** | Locally scoped styles per component, no class name collisions |
+| **Props validation** | `PropTypes` in `BurgerIngredient` |
+| **100% CSS burger** | Bun, seeds, meat and cheese are drawn purely with CSS, no images |
 
 ---
 
-## 🗂️ Estructura del proyecto
+## 🗂️ Project structure
 
 ```
 src/
 ├── containers/
-│   └── BurgerBuilder/        # Componente con estado: lógica de ingredientes y precio
+│   └── BurgerBuilder/         # Stateful component: ingredient and price logic
 ├── components/
 │   ├── Burger/
-│   │   ├── BurgerIngredient/ # Cada capa de la hamburguesa (CSS puro)
-│   │   ├── BuildControls/    # Botones Más / Menos por ingrediente
-│   │   ├── OrderSummary/     # Resumen que se muestra en el modal
-│   │   └── OrderConfirmation/ # Pantalla de pedido confirmado
-│   ├── Navigation/           # Toolbar, SideDrawer y NavigationItems
+│   │   ├── BurgerIngredient/  # Each layer of the burger (pure CSS)
+│   │   ├── BuildControls/     # More / Less buttons per ingredient
+│   │   ├── OrderSummary/      # Summary shown inside the modal
+│   │   └── OrderConfirmation/ # Order confirmed screen
+│   ├── Navigation/            # Toolbar, SideDrawer and NavigationItems
 │   ├── Logo/
-│   └── UI/                   # Modal, Backdrop, Button (reutilizables)
+│   └── UI/                    # Modal, Backdrop, Button (reusable)
 ├── hoc/
-│   ├── Auxiliar/             # Wrapper sin nodo extra en el DOM
-│   └── Layout/               # Estructura general de la app
+│   ├── Auxiliar/              # Wrapper with no extra DOM node
+│   └── Layout/                # Overall app structure
 └── assets/
 ```
 
 ---
 
-## 🚀 Cómo ejecutarlo
+## 🚀 Getting started
 
-**Requisitos:** [Node.js](https://nodejs.org) instalado.
+**Requirements:** [Node.js](https://nodejs.org) installed.
 
 ```bash
-# 1. Clona el repositorio
+# 1. Clone the repository
 git clone https://github.com/diegomottadev/delivery-burguer-app.git
 cd delivery-burguer-app
 
-# 2. Instala las dependencias
+# 2. Install dependencies
 npm install
 
-# 3. Levanta el servidor de desarrollo
+# 3. Start the development server
 npm start
 ```
 
-Abre **http://localhost:3000** en tu navegador y empieza a armar tu hamburguesa. 🍔
+Open **http://localhost:3000** in your browser and start building your burger. 🍔
 
-| Comando | Descripción |
+| Command | Description |
 |---|---|
-| `npm start` | Servidor de desarrollo con recarga automática |
-| `npm run build` | Build optimizado para producción en `/build` |
-| `npm test` | Ejecuta los tests con Jest |
-| `npm run deploy` | Genera el build y lo publica en GitHub Pages (rama `gh-pages`) |
+| `npm start` | Development server with hot reload |
+| `npm run build` | Optimized production build in `/build` |
+| `npm test` | Runs the tests with Jest |
+| `npm run deploy` | Builds the app and publishes it to GitHub Pages (`gh-pages` branch) |
 
 ---
 
-## 🛣️ Próximos pasos
+## 🛣️ Next steps
 
-El curso sigue mucho más allá de esta etapa, y este proyecto tiene espacio para crecer con él:
+The course goes far beyond this stage, and this project has room to grow with it:
 
-- [ ] Guardar pedidos en un backend (Firebase) con Axios
-- [ ] Flujo de checkout con **React Router**
-- [ ] Manejo de estado global con **Redux**
-- [ ] Autenticación de usuarios
-- [ ] Migrar los componentes de clase a **Hooks**
+- [ ] Save orders to a backend (Firebase) using Axios
+- [ ] Checkout flow with **React Router**
+- [ ] Global state management with **Redux**
+- [ ] User authentication
+- [ ] Migrate class components to **Hooks**
 
 ---
 
-## 🙌 Créditos
+## 🙌 Credits
 
-- Curso: [React - The Complete Guide (incl. Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) de **Maximilian Schwarzmüller** (Academind).
-- Desarrollado por **[Diego Motta](https://github.com/diegomottadev)** como parte de mi camino aprendiendo React.
+- Course: [React - The Complete Guide (incl. Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) by **Maximilian Schwarzmüller** (Academind).
+- Built by **[Diego Motta](https://github.com/diegomottadev)** as part of my journey learning React.
 
 <div align="center">
 
-⭐ Si este proyecto te resultó útil o te trajo recuerdos de tus primeros pasos en React, ¡déjale una estrella!
+⭐ If you found this project useful, or it brought back memories of your own first steps with React, give it a star!
 
 </div>
