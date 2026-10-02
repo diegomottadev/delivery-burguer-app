@@ -13,7 +13,7 @@ One of my first React applications: the project where I stopped reading about co
 
 ### [🍔 Try it live](https://diegomottadev.github.io/delivery-burguer-app/)
 
-![Burger Builder in action](https://user-images.githubusercontent.com/64202326/233193956-e2e2b1ca-10f8-4fb3-a038-24cd7e6fd603.png)
+![Burger Builder on desktop and mobile](docs/screenshot.jpg)
 
 </div>
 
