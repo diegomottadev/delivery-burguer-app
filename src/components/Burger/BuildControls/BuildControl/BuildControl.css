@@ -54,3 +54,9 @@
     background-color: #99703F;
     color: white;
 }
+.Price {
+    display: block;
+    font-weight: normal;
+    font-size: 0.8em;
+    color: #703B09;
+}

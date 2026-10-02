@@ -14,6 +14,18 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
+// webpack-dev-server 2.x depends on http-deceiver, which calls
+// process.binding('http_parser'). That binding was removed in modern Node.js,
+// so serve it from the public _http_common module instead.
+const originalBinding = process.binding;
+process.binding = function(name) {
+  if (name === 'http_parser') {
+    const httpCommon = require('_http_common');
+    return { HTTPParser: httpCommon.HTTPParser, methods: httpCommon.methods };
+  }
+  return originalBinding.apply(process, arguments);
+};
+
 const fs = require('fs');
 const chalk = require('chalk');
 const webpack = require('webpack');

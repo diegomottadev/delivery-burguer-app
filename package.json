@@ -1,7 +1,8 @@
 {
-  "name": "react-complete-guide",
+  "name": "burger-builder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://diegomottadev.github.io/delivery-burguer-app",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -31,7 +32,7 @@
     "postcss-loader": "2.0.6",
     "promise": "8.0.1",
     "prop-types": "^15.7.2",
-    "react": "^16.0.0",
+    "react": "^16.13.1",
     "react-dev-utils": "^4.2.3",
     "react-dom": "^16.13.1",
     "style-loader": "0.18.2",
@@ -44,6 +45,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "dev": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
